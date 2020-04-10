@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C04Paragraph.html</title>
+</head>
+<body>
+    <!--
+        수평방향에서의 정렬
+            블록엘리먼트 : 콘텐츠 양의 상관없이 하나의 블록을 차지하게 되므로 
+                우측에 공간이 충분하여 콘텐츠는 우측 정렬된다. 
+            인라인엘리먼트 : 콘텐츠의 크기만큼만 영역을 차지하므로 
+                콘텐츠가 움직일 공간이 없어 정렬되지 않는다. 
+                만약 정렬해야 한다면 부모엘리먼트에서 text-align을 설정한다. 
+    -->
+    <h2>문단 관련 CSS 속성들</h2>
+    
+    <div style="border:1px blue dotted; width:400px;"><!-- text-align:right;-->
+        <h2>콘텐츠 수평 방향 정렬</h2>
+        <div style="border:1px solid red; text-align: right;">
+            블록엘리먼트
+        </div>
+        <span style="border:1px solid blue; text-align: right;">
+            인라인엘리먼트
+        </span>
+    </div>
+
+    <!--
+    line-height : 줄 잔격. 즉, 라인 사이의 간격을 띄우는데 
+        블록과 인라인은 조금 다르게 적용된다. 
+        Block : 콘텐츠의 영역 중 세로 영역이 늘어나서 마치 줄 간격이
+            생긴 것 같은 효과가 나타난다. 
+        Inline : 콘텐츠의 영역은 크기의 변화가 없지만 지정된 사이즈만큼 
+            줄 간격이 생겨 사이가 벌어진다. 
+    -->
+
+    <h3>줄 사이 간격</h3>
+    <h4 style="line-height:5em; border:1px solid blue;">
+        블록엘리먼트1에 줄 간격 적용
+    </h4>
+    <h4 style="border:1px solid black;">블록엘리먼트2</h4>
+    <h4 style="border:1px solid black;">블록엘리먼트3</h4>
+
+    <div class="inline">
+        <span style="line-height: 5em; border: 1px solid black;">
+            인라인엘리먼트</span><br/>
+            <span style="border:1px solid black;">인라인엘리먼트2</span>
+            <br/>
+            <span style="border:1px solid black;">인라인엘리먼트3</span>
+    </div>
+
+    <h3>수직 상태에서의 가운데 정렬</h3>
+
+    <!--
+        div박스의 height와 line-height의 값을 동일하게 지정하면 
+        세로 상태에서 가운데 정렬이 된다.  
+    -->
+    <h4>블록엘린먼트 사용시 방법1</h4>
+    <div style="border:1px solid black; height: 200px; width: 200px;
+        line-height: 200px;">
+        나는 텍스트1
+    </div>
+
+    <!--
+        div박스 내부의 padding을 줘서 텍스트를 아래로 밀어준다. 
+        이 경우 박스의 세로 영역이 늘어나므로 사이즈는 별도로 조절해줘야 한다. 
+    -->
+    <h4>블록엘린먼트 사용시 방법2</h4>
+    <div style="border:1px solid red; height: 100px; width: 200px;
+        padding-top: 100px;">
+        나는 텍스트2
+    </div>
+
+    <!--
+        인라인엘리먼트에서 세로 상태의 가운데  정렬을 위해서는 
+        vertical-align을 사용한다. 
+    -->
+    <h4>인라인엘리먼트 사용시</h4>
+    <table border="1" width="300">
+        <tr>
+            <td style="height:100px;vertical-align: top;">인라인엘리먼트 
+            세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height:100px;vertical-align: middle;">인라인엘리먼트 
+            세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height:100px;vertical-align: bottom;">인라인엘리먼트 
+            세로정렬</td>
+        </tr>
+
+    </table>
+
+    <h2>배분정렬</h2>
+    <p style="border: 1px solid blue; text-align: justify; word-break: keep-all;">
+        크게 회전하면 휠 스핀까지..우체국 "안전규칙 강화해나갈 것"
+        <br/><br/>
+        (지디넷코리아=조재환 기자)우체국 택배용 초소형 전기차가 아파트 내 보행자 전용 구간에서 과격하게 운행한 사실이 영상으로 포착돼 논란을 일으키고 있다.
+        <br/><br/>
+        아파트 주민들의 안전을 심각하게 위협하는 일이기 때문이다.
+        <br/><br/>
+        세종시의 한 아파트에 거주하는 A씨는 7일 과격한 운전을 하는 우체국 초소형 전기차의 주행모습을 영상으로 담아 지디넷코리아에 보내왔다.
+        <br/><br/>
+        당시 우체국 초소형 전기차는 크게 원을 돌고 휠 스핀을 일으키며 아파트 보행 전용 구간을 빠져나갔고 뒤이어 우체국 소속 초소형 전기차 두 대가 따라갔다. A씨는 이 영상을 지난 4일 촬영했다고 밝혔다.
+        <br/><br/>
+        A씨가 거주하는 세종시 아파트 보행구간 내 우체국 초소형 전기차 통행 문제는 약 2개월 간 이어졌다.
+        <br/><br/>
+        당시 A씨는 국민신문고에 우체국 초소형 전기차의 아파트 보행구간 출입을 막아달라는 내용을 국민신문고에 보냈다. “안전은 양보할 수 없다”는 내용과 함께 조치가 필요하다는 것이 A씨의 요구다.
+        <br/><br/>
+        A씨의 국민신문고 민원을 받은 세종우체국 관계자는 “앞으로 우편문 배달을 위해 전기차량 운행 시 아파트 내에서 지상운행하지 않도록 전 집배원 대상 안전교육을 정기적을 실시해 동일사항이 발생되지 않도록 노력하겠다”고 답했다.
+        <br/><br/>
+    </p>
+
+    <!--
+        text-indent : 문단에서 들여쓰기할 때 사용한다. 
+            Block : 첫 번째 줄의 문장이 지정한 만큼 들여쓰기 된다. 
+            Inline : 콘텐츠의 영역의 잔여공간이 없으므로 들여쓰기 되지 않는다. 
+            이때 부모엘리먼트에서 padding을 통해 밀어줘야 한다. 
+    -->
+    <h2>들여쓰기</h2>
+    <div style="border:1px solid red; text-indent: 1em; " >
+        블록엘리먼트&nbsp;블록엘리먼트&nbsp;블록엘리먼트&nbsp;
+        블록엘리먼트&nbsp;블록엘리먼트&nbsp;블록엘리먼트&nbsp;
+        블록엘리먼트&nbsp;블록엘리먼트&nbsp;블록엘리먼트&nbsp;
+    </div>
+    <div style="border:1px solid blue; padding-left: 10px;">
+        <span style="text-indent: 1em;">
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        </span>
+
+    </div>
+</body>
+</html>
